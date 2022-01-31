@@ -22,14 +22,38 @@ namespace BookRecomendationWebApp.Controllers
         }
 
 
-
-        public void AddReviews()
+        [HttpGet]
+        public ActionResult AddReviews()
         {
+            try
+            {
+                BookRecomendationBL Objbl = new BookRecomendationBL();
+                List<BookDTO> ObjPL = Objbl.ShowReviewsForBook();
+                List<BookViewModel> ObjModel = new List<BookViewModel>();
+                foreach (var bk in ObjPL)
+                {
+                    ObjModel.Add(new BookViewModel()
+                    {
 
+                        book_isbn = bk.book_isbn,
+                        title = bk.title,
+                        author_id = bk.author_id,
+                        book_edition = bk.book_edition
+                    });
+                }
+                return View(ObjModel);
+            }
+
+            catch (Exception ex)
+            {
+
+                return View("Error");
+            }
+            }
         }
 
         public void DisplayResultsUsingWebAPI()
         {
         }
     }
-}
+

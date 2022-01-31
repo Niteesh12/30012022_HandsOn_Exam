@@ -32,3 +32,7 @@ C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRec
 C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.csproj.CopyComplete
 C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.dll
 C:\Users\40013016\Desktop\OneDrive_1_1-30-2022\HandsOn\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.pdb
+C:\Users\csrre\OneDrive\Desktop\40020529\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\csrre\OneDrive\Desktop\40020529\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\csrre\OneDrive\Desktop\40020529\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.dll
+C:\Users\csrre\OneDrive\Desktop\40020529\30012022_HandsOn_Exam\BookRecomendation\BookRecomendationDataAccessLayer\obj\Debug\BookRecomendationDataAccessLayer.pdb
