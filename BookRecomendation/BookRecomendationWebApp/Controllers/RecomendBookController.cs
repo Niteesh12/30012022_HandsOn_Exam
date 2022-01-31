@@ -52,8 +52,19 @@ namespace BookRecomendationWebApp.Controllers
             }
         }
 
-        public void DisplayResultsUsingWebAPI()
+        public void DisplayResultsUsingWebAPI(BookDTO Objnew)
         {
+           if(Objnew ! = null)
+        {
+            BookRecomendationBL Objbl = new BookRecomendationBL();
+            BookDTO ObjDTO = new BookDTO();
+            ObjDTO.author_name = Objnew.author_name;
+            ObjDTO.book_edition = Objnew.book_edition;
+            ObjDTO.author_id = Objnew.author_id;
+            ObjDTO.title = Objnew.title;
+            int newbook_isbn = 0;
+            
+        }
         }
     }
 

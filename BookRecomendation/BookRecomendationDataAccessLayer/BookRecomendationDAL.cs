@@ -46,6 +46,11 @@ namespace BookRecomendationDataAccessLayer
                 throw;
             }
         }
+
+        public int SaveReviewForBookToDB(BookDTO dTOObj, out int newbook_isbn)
+        {
+            throw new NotImplementedException();
+        }
     }
 
         public List<BookDTO> FetchReviewsForBook()
@@ -75,9 +80,35 @@ namespace BookRecomendationDataAccessLayer
         }
         }
 
-        public void SaveReviewForBookToDB()
+        public int SaveReviewForBookToDB(BookDTO DTOObj, out int newbook_isbn, SqlConnection conObj)
         {
+        newbook_isbn = 0;
+        SqlCommand cmdObj = new SqlCommand();
+        cmdObj.CommandText = @"uspAddReview";
+        cmdObj.CommandType = System.Data.CommandType.StoredProcedure;
+        cmdObj.Connection = conObj;
+        cmdObj.Parameters.AddWithValue("@book_isbn", DTOObj.book_isbn);
+        cmdObj.Parameters.AddWithValue("@title", DTOObj.title);
+        cmdObj.Parameters.AddWithValue("@author_id", DTOObj.author_id);
+        cmdObj.Parameters.AddWithValue("@book_edition", DTOObj.book_edition);
+
+        SqlParameter Pararetvalue = new SqlParameter();
+        Pararetvalue.Direction = ParameterDirection.ReturnValue;
+        Pararetvalue.SqlDbType = SqlDbType.Int;
+        cmdObj.Parameters.Add(Pararetvalue);
+
+        SqlParameter prcnewbook_isbnOut = new SqlParameter();
+        prcnewbook_isbnOut.Direction = ParameterDirection.Output;
+        prcnewbook_isbnOut.SqlDbType = SqlDbType.Int;
+        prcnewbook_isbnOut.ParameterName = "@newbook_isbn";
+        cmdObj.Parameters.Add(prcnewbook_isbnOut);
+
+        conObj.Open();
+        cmdObj.ExecuteNonQuery();
+        newbook_isbn = Convert.ToInt32(prcnewbook_isbnOut);
+        return Convert.ToInt32(Pararetvalue.Value);
+
         }
 
 }
-}
+

@@ -48,10 +48,24 @@ namespace BookRecomendationBusinessLayer
         }
 
 
-        public void AddReviewForBook()
+        public int AddReviewForBook(BookDTO DTOObj, out int newbook_isbn)
         {
-
+            if (String.IsNullOrEmpty(DTOObj.title))
+            {
+                newbook_isbn = 0;
+                return -1;
+            }
+            else if (string.IsNullOrEmpty(DTOObj.author_name))
+            {
+                newbook_isbn = 0;
+                return -2;
+            }
+            else
+                return Objdal.SaveReviewForBookToDB(DTOObj, out newbook_isbn);
         }
+        
+
+        
 
     }
 }

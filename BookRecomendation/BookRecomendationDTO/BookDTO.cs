@@ -12,6 +12,7 @@ namespace BookRecomendationDTO
         public string title { get; set; }
         public int book_edition { get; set; }
         public int author_id { get; set; }
+        public string author_name { get; set; }
 
     }
 }
